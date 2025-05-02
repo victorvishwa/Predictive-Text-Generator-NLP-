@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Predictive Text Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Predictive Text Generator</h1>
+            <p class="subtitle"></p>
+        </header>
+        
+        <div class="card">
+            <div class="input-group">
+                <label for="user-input">Start typing your sentence:</label>
+                <div class="input-container">
+                    <input type="text" id="user-input" placeholder="I want to...">
+                    <button id="generate-btn" class="generate-btn">
+                        <i class="fas fa-magic"></i> Generate
+                    </button>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label for="style-select">Writing Style:</label>
+                    <select id="style-select" class="styled-select">
+                        <option value="neutral">Neutral</option>
+                        <option value="casual">Casual</option>
+                        <option value="formal">Formal</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="token-slider">Output Length: <span id="token-value">50</span> tokens</label>
+                    <input type="range" id="token-slider" min="10" max="100" value="50" class="slider">
+                </div>
+            </div>
+            
+            <div class="result-container">
+                <label>Generated Text:</label>
+                <div id="result" class="result-box">
+                    <p id="result-text">Your predicted text will appear here...</p>
+                </div>
+                <button id="copy-btn" class="copy-btn">
+                    <i class="far fa-copy"></i> Copy to Clipboard
+                </button>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>© 2023 AI Text Generator | Built with Flask & GPT-2</p>
+        </footer>
+    </div>
+    
+    <div class="animation-circle circle-1"></div>
+    <div class="animation-circle circle-2"></div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

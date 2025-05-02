@@ -1,0 +1,16 @@
+# Ignore Python virtual environment
+Lib/
+Scripts/
+pyvenv.cfg
+__pycache__/
+*.pyc
+
+# Ignore system or editor files
+*.log
+.vscode/
+.DS_Store
+.env
+
+# Ignore large compiled files
+*.dll
+*.lib
